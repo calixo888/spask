@@ -1,0 +1,7 @@
+{
+  "name": "spask",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
