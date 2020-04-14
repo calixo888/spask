@@ -9,7 +9,8 @@ import {File} from "@ionic-native/file/";
 })
 export class HomePage {
   status: string = "";
-  audioFile: MediaObject = this.media.create(this.file.externalRootDirectory + '/audiofile.mp3');
+  audioFile: MediaObject = this.media.create
+  (this.file.externalRootDirectory + '/audiofile.mp3');
 
   constructor(private media: Media, private file: File) {}
 
@@ -22,12 +23,13 @@ export class HomePage {
     this.audioFile.stopRecord();
     this.status = "stopped recording";
   }
-
-export class HomePage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
+
+// export class HomePage implements OnInit {
+//
+//   constructor() { }
+//
+//   ngOnInit() {
+//   }
+//
+// }

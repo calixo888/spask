@@ -12,4 +12,7 @@ export class TasksPage implements OnInit {
   ngOnInit() {
   }
 
+  async deleteTasks() {
+    console.log("boi");
+  }
 }
