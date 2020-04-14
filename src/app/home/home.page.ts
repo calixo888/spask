@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Media,MediaObject} from "@ionic-native/media/ngx";
+import {Media, MediaObject} from "@ionic-native/media";
 import {File} from "@ionic-native/file/ngx";
 
 @Component({
@@ -9,9 +9,10 @@ import {File} from "@ionic-native/file/ngx";
 })
 export class HomePage {
   status: string = "";
-  audioFile: MediaObject = this.media.create(this.file.externalRootDirectory + '/audiofile.mp3');
+  audioFile: MediaObject = this.media.create('./audiofile.mp3');
+  // this.file.externalRootDirectory +
 
-  constructor(private media: Media, private file: File) {}
+  constructor(private media: MediaObject, private file: File) {}
 
   RecordAudio() {
     this.audioFile.startRecord();
