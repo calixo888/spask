@@ -17,17 +17,6 @@ export class TasksPage implements OnInit {
     this.getTasks();
   }
 
-  async addTask(task) {
-    await this.storage.get("tasks").then(tasks => {
-      if (tasks) {
-          tasks.push(task);
-          this.storage.set("tasks", tasks);
-      } else {
-        this.storage.set("tasks", [task]);
-      }
-    })
-  }
-
   async getTasks() {
     await this.storage.get("tasks").then(tasks => this.tasks = tasks)
   }

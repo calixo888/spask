@@ -18,10 +18,6 @@ const routes: Routes = [
     path: 'tasks',
     loadChildren: () => import('./tasks/tasks.module').then( m => m.TasksPageModule)
   },
-  {
-    path: 'add-task-modal',
-    loadChildren: () => import('./add-task-modal/add-task-modal.module').then( m => m.AddTaskModalPageModule)
-  }
 ];
 @NgModule({
   imports: [

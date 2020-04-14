@@ -7,12 +7,19 @@ import {File} from "@ionic-native/file/ngx";
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
+
 export class HomePage {
   status: string = "";
-  audioFile: MediaObject = this.media.create('./audiofile.mp3');
-  // this.file.externalRootDirectory +
 
-  constructor(private media: MediaObject, private file: File) {}
+  CreateFile() {
+    const audioFile: MediaObject = this.media.create('./audiofile.mp3');
+    // this.file.externalRootDirectory +
+  }
+
+  constructor(private media: Media, private file: File) {}
+
+  ngOnInit() {
+  }
 
   RecordAudio() {
     this.audioFile.startRecord();
