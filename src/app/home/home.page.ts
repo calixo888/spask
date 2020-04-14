@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Media,MediaObject} from "@ionic-native/media/";
-import {File} from "@ionic-native/file/";
+import {Media,MediaObject} from "@ionic-native/media/ngx";
+import {File} from "@ionic-native/file/ngx";
 
 @Component({
   selector: 'app-home',
@@ -9,8 +9,7 @@ import {File} from "@ionic-native/file/";
 })
 export class HomePage {
   status: string = "";
-  audioFile: MediaObject = this.media.create
-  (this.file.externalRootDirectory + '/audiofile.mp3');
+  audioFile: MediaObject = this.media.create(this.file.externalRootDirectory + '/audiofile.mp3');
 
   constructor(private media: Media, private file: File) {}
 
