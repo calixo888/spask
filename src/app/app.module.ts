@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { Media } from '@ionic-native/media/ngx';
 import { File} from '@ionic-native/file/ngx';
 
+import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,6 +23,7 @@ import { File} from '@ionic-native/file/ngx';
     SplashScreen,
     Media,
     File,
+    SpeechRecognition,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

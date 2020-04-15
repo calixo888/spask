@@ -7,13 +7,18 @@ import { RecordPageRoutingModule } from './record-routing.module';
 
 import { RecordPage } from './record.page';
 
+import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
+
 @NgModule({
+  declarations: [RecordPage],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     RecordPageRoutingModule
   ],
-  declarations: [RecordPage]
+  providers: [
+    SpeechRecognition
+  ]
 })
 export class RecordPageModule {}

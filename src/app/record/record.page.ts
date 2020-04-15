@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Media, MediaObject} from "@ionic-native/media/ngx";
 import {File} from "@ionic-native/file/ngx";
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 
 // import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture/ngx';
 
@@ -15,7 +16,7 @@ export class RecordPage implements OnInit {
   status: string = "";
   audioFile: MediaObject;
 
-  constructor(private media: Media, private file: File, private speechRecognition: SpeechRecognition) {}
+  constructor(private media: Media, private file: File, private speech: SpeechRecognition) {}
 
   ngOnInit() {
     // let options: CaptureImageOptions = { limit: 3 }
@@ -24,29 +25,30 @@ export class RecordPage implements OnInit {
     //   (err: CaptureError) => console.error(err)
     // );
     //this.CreateFile();
+    this.isSpeechSupported();
+    this.getPermission();
   }
 
   // Check feature available
-  async isSpeechSupported():Promise<boolean> {
+  async isSpeechSupported() {
     const isAvailable = await this.speech.isRecognitionAvailable();
     console.log(isAvailable);
     return isAvailable;
   }
 
   // Get Permissions
-  async getPermission():Promise<void> {
-    try{
+  async getPermission() {
+    try {
       const permission = await this.speech.requestPermission();
       console.log(permission);
       return permission;
-    }
-    catch(e){
+    } catch(e) {
       console.log(e);
     }
   }
 
   // Start the recognition process
-  listenForSpeech():void {
+  listenForSpeech() {
     this.speech.startListening().subscribe(data => console.log(data), error => console.log(error));
   }
 
