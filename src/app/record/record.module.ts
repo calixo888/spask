@@ -9,6 +9,9 @@ import { RecordPage } from './record.page';
 
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
 
+import {Media, MediaObject} from "@ionic-native/media/ngx";
+import {File} from "@ionic-native/file/ngx";
+
 @NgModule({
   declarations: [RecordPage],
   imports: [
@@ -18,7 +21,9 @@ import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
     RecordPageRoutingModule
   ],
   providers: [
-    SpeechRecognition
+    SpeechRecognition,
+    Media,
+    File
   ]
 })
 export class RecordPageModule {}

@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Media, MediaObject} from "@ionic-native/media/ngx";
 import {File} from "@ionic-native/file/ngx";
+import { Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
+
+// Show the splash for an indefinite amount of time:
+SplashScreen.show({
+  autoHide: false
+});
 
 @Component({
   selector: 'app-home',
